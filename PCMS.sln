@@ -19,8 +19,26 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{A93B9B6A-2568-4E61-99DA-E5CCB04E69F2}"
+	ProjectSection(SolutionItems) = preProject
+		Design_Decisions.md = Design_Decisions.md
+		..\..\..\Downloads\NLPC PCMS.postman_collection.json = ..\..\..\Downloads\NLPC PCMS.postman_collection.json
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "migrations", "migrations", "{3768DF34-9164-46F8-A135-F2BB2801786B}"
+	ProjectSection(SolutionItems) = preProject
+		Persistence\Migrations\20250325175053_First_PCMS_Migration.cs = Persistence\Migrations\20250325175053_First_PCMS_Migration.cs
+		Persistence\Migrations\20250325175053_First_PCMS_Migration.Designer.cs = Persistence\Migrations\20250325175053_First_PCMS_Migration.Designer.cs
+		Persistence\Migrations\20250326195355_ContributionUpdate.cs = Persistence\Migrations\20250326195355_ContributionUpdate.cs
+		Persistence\Migrations\20250326195355_ContributionUpdate.Designer.cs = Persistence\Migrations\20250326195355_ContributionUpdate.Designer.cs
+		Persistence\Migrations\20250327192243_CronJobUpdate.cs = Persistence\Migrations\20250327192243_CronJobUpdate.cs
+		Persistence\Migrations\20250327192243_CronJobUpdate.Designer.cs = Persistence\Migrations\20250327192243_CronJobUpdate.Designer.cs
+		Persistence\Migrations\20250327195724_CronJobUpdate1.cs = Persistence\Migrations\20250327195724_CronJobUpdate1.cs
+		Persistence\Migrations\20250327195724_CronJobUpdate1.Designer.cs = Persistence\Migrations\20250327195724_CronJobUpdate1.Designer.cs
+		Persistence\Migrations\20250328221935_JobUpdate.cs = Persistence\Migrations\20250328221935_JobUpdate.cs
+		Persistence\Migrations\20250328221935_JobUpdate.Designer.cs = Persistence\Migrations\20250328221935_JobUpdate.Designer.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{5D895082-C8B4-4242-8D90-1832E3A39D9F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +77,15 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{96BA7EDA-DCF8-480A-8888-335FAF21489C} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{DBC2FFED-504B-4206-8F6E-28168BB48D4A} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{A3359FB2-430A-43BF-B5A8-35D038DEFA20} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{D8A4937E-89B6-4202-A681-47420D836319} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{4EADCAFF-6C58-4086-8C2F-5A928E16D668} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{82547407-3A06-475B-980F-245552FFE5AD} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{961A6B11-E3BD-4E24-A11A-B866B41CD5CD} = {5D895082-C8B4-4242-8D90-1832E3A39D9F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E0A31D79-D906-48EC-9E16-B9F6E95F3356}

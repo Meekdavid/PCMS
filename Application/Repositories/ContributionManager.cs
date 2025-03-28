@@ -48,7 +48,8 @@ namespace Application.Repositories
             ICacheService cacheService,
             IAccountManager accountManager,
             IFileManager fileManager,
-            ITransactionRepository transactionDal)
+            ITransactionRepository transactionDal,
+            IAccountRepository accountDal)
         {
             _contributionDal = contributionDal;
             _memberDal = memberDal;
@@ -60,6 +61,7 @@ namespace Application.Repositories
             _accountManager = accountManager;
             _fileManager = fileManager;
             _transactionDal = transactionDal;
+            _accountDal = accountDal;
         }
 
         // Method to add a new contribution

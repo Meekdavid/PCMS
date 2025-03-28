@@ -38,6 +38,7 @@ namespace Tests.BusinessLogics.ContributionManagerTests
         private readonly IFileManager _fileManager;
         private readonly IUnitOfWork _unitOfWork;
         private readonly ITransactionRepository _transactionDal;
+        private readonly IAccountRepository _accountDal;
         private readonly ILogger<ContributionManager> _logger;
         private readonly IMapper _mapper;
         private readonly ICacheService _cacheService;
@@ -48,6 +49,7 @@ namespace Tests.BusinessLogics.ContributionManagerTests
             _contributionDal = A.Fake<IContributionRepository>();
             _memberDal = A.Fake<IMemberRepository>();
             _transactionManager = A.Fake<ITransactionManager>();
+            _accountDal = A.Fake<IAccountRepository> ();
             _accountManager = A.Fake<IAccountManager>();
             _fileManager = A.Fake<IFileManager>();
             _unitOfWork = A.Fake<IUnitOfWork>();
@@ -66,7 +68,8 @@ namespace Tests.BusinessLogics.ContributionManagerTests
                 _cacheService,
                 _accountManager,
                 _fileManager,
-                _transactionDal);
+                _transactionDal,
+                _accountDal);
         }
 
         [Fact]
