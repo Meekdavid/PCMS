@@ -1,6 +1,6 @@
 # Pension Contribution Management System
 
-[![.NET Core](https://img.shields.io/badge/.NET-6.0-blue)](https://dotnet.microsoft.com/)
+[![.NET Core](https://img.shields.io/badge/.NET-8.0-blue)](https://dotnet.microsoft.com/)
 [![SQL Server](https://img.shields.io/badge/SQL%20Server-2019+-blue)](https://www.microsoft.com/sql-server)
 [![Swagger](https://img.shields.io/badge/Swagger-UI-green)](https://nlpcpcms.runasp.net/swagger/index.html)
 
