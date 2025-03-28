@@ -3,6 +3,7 @@ using Common.DTOs.Requests;
 using Common.DTOs.Responses;
 using Common.Models;
 using Core.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Transactions;
 using static Common.Literals.StringLiterals;
@@ -11,6 +12,7 @@ namespace API.Controllers
 {
     [ApiController]
     [Route("api/contributions")]
+    [Authorize]
     public class ContributionController : ControllerBase
     {
         private readonly IContributionManager _contributionManager;
@@ -90,6 +92,7 @@ namespace API.Controllers
         /// | 404        | 31           | Member contributions not found |  
         /// | 500        | 09           | Exception occurred, contact developer |  
         /// </remarks>
+        [Authorize(Roles = "Admin,Employer")]
         [HttpGet("member/{memberId}")]
         [ProducesResponseType(typeof(SuccessDataResult<List<ContributionDTO>>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorDataResult<string>), StatusCodes.Status404NotFound)]
@@ -115,6 +118,7 @@ namespace API.Controllers
         /// | 404        | 31           | Contribution summary not found |  
         /// | 500        | 09           | Exception occurred, contact developer |  
         /// </remarks>
+        [Authorize(Roles = "Admin")]
         [HttpGet("summary/{memberId}")]
         [ProducesResponseType(typeof(SuccessDataResult<ContributionDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorDataResult<string>), StatusCodes.Status404NotFound)]

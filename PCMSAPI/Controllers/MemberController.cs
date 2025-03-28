@@ -4,6 +4,7 @@ using Common.DTOs.Responses;
 using Common.Models;
 using Common.Pagination;
 using Core.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Persistence.Enums;
 
@@ -130,6 +131,7 @@ namespace API.Controllers
         /// </remarks>
         /// <param name="pageIndex">The page index (starting from 1).</param>
         /// <param name="pageSize">The number of records per page.</param>
+        [Authorize(Roles = "Admin")]
         [HttpGet("all")]
         [ProducesResponseType(typeof(SuccessDataResult<PaginatedList<MemberDTO>>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorDataResult<string>), StatusCodes.Status400BadRequest)]
@@ -161,6 +163,7 @@ namespace API.Controllers
         /// <param name="pageIndex">The page index (starting from 1).</param>
         /// <param name="pageSize">The number of records per page.</param>
         /// <param name="memberType">The membership type. Value is 1 for Empoyer, 2 for Employee and 3 for Individual</param>
+        [Authorize(Roles = "Admin")]
         [HttpGet("by-type")]
         [ProducesResponseType(typeof(SuccessDataResult<PaginatedList<MemberDTO>>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorDataResult<string>), StatusCodes.Status400BadRequest)]
@@ -192,6 +195,7 @@ namespace API.Controllers
         /// | 500        | 09           | Exception occurred, contact developer |  
         /// </remarks>
         /// <param name="memberId">Existing member unique Id.</param>
+        [Authorize(Roles = "Admin")]
         [HttpDelete]
         [ProducesResponseType(typeof(SuccessDataResult<string>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorDataResult<string>), StatusCodes.Status400BadRequest)]

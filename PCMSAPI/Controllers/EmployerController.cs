@@ -5,6 +5,7 @@ using Common.DTOs.Responses;
 using Common.Models;
 using Common.Pagination;
 using Core.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -140,6 +141,7 @@ namespace API.Controllers
         /// </remarks>
         /// <param name="pageIndex">The page index (starting from 1).</param>
         /// <param name="pageSize">The number of records per page.</param>
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         [ProducesResponseType(typeof(SuccessDataResult<PaginatedList<EmployerDTO>>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorDataResult<string>), StatusCodes.Status400BadRequest)]
@@ -171,6 +173,7 @@ namespace API.Controllers
         /// <param name="pageIndex">The page index (starting from 1).</param>
         /// <param name="pageSize">The number of records per page.</param>
         /// <param name="isActive">Filter by active status (true/false)</param>
+        [Authorize(Roles = "Admin")]
         [HttpGet("by-status")]
         [ProducesResponseType(typeof(SuccessDataResult<PaginatedList<EmployerDTO>>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorDataResult<string>), StatusCodes.Status400BadRequest)]
@@ -200,6 +203,7 @@ namespace API.Controllers
         /// | 500        | 09           | Exception occurred, contact developer |  
         /// </remarks>
         /// <param name="employerId">Existing employer unique Id.</param>
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{employerId}")]
         [ProducesResponseType(typeof(SuccessDataResult<string>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorDataResult<string>), StatusCodes.Status400BadRequest)]

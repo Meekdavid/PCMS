@@ -4,12 +4,14 @@ using Common.DTOs.Requests;
 using Common.DTOs.Responses;
 using Common.Models;
 using Core.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
     [ApiController]
     [Route("api/accounts")]
+    [Authorize]
     public class AccountController : ControllerBase
     {
         private readonly IAccountManager _accountManager;
@@ -90,6 +92,7 @@ namespace API.Controllers
         /// | 200        | 31           | No accounts found |  
         /// | 500        | 09           | Exception occurred, contact developer |  
         /// </remarks>
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         [ProducesResponseType(typeof(SuccessDataResult<List<AccountDTO>>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorDataResult<string>), StatusCodes.Status500InternalServerError)]
